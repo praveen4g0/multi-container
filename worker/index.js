@@ -4,14 +4,13 @@ const redis = require('redis');
 
 console.log(keys.redishost);
 console.log(keys.redisport);
-console.log(keys.redispassword)
 
 const redisClient = redis.createClient({
   host: keys.redishost,
   port: keys.redisport,
+  {no_ready_check: true},
   retry_strategy: () => 1000
 });
-redisClient.auth(keys.redispassword);
 const sub = redisClient.duplicate();
 
 
