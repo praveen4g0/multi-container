@@ -8,7 +8,7 @@ console.log(keys.redisport);
 const redisClient = redis.createClient({
   host: keys.redishost,
   port: keys.redisport,
-  {no_ready_check: true},
+  no_ready_check: true,
   retry_strategy: () => 1000
 });
 const sub = redisClient.duplicate();
