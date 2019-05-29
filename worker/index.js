@@ -4,6 +4,7 @@ const redis = require('redis');
 
 console.log(keys.redishost);
 console.log(keys.redisport);
+console.log(keys.redispassword)
 
 const redisClient = redis.createClient({
   host: keys.redishost,
