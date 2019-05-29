@@ -9,7 +9,7 @@ const redisClient = redis.createClient({
   host: keys.redishost,
   port: keys.redisport,
   no_ready_check: true,
-  auth_pass: redisPassword
+  auth_pass: redisPassword,
   retry_strategy: () => 1000
 });
 
