@@ -1,9 +1,6 @@
 const keys = require('./keys');
 const redis = require('redis');
-const redisPassword = "redis" ; 
-
-console.log(keys.redishost);
-console.log(keys.redisport);
+const redisPassword = "redis" ;
 
 const redisClient = redis.createClient({
   host: keys.redishost,
