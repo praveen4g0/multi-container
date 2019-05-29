@@ -1,6 +1,10 @@
 const keys = require('./keys');
 const redis = require('redis');
 
+
+console.log(keys.redishost);
+console.log(keys.redisport);
+
 const redisClient = redis.createClient({
   host: keys.redishost,
   port: keys.redisport,
