@@ -10,6 +10,7 @@ const redisClient = redis.createClient({
   port: keys.redisport,
   retry_strategy: () => 1000
 });
+redisClient.auth(keys.redispassword);
 const sub = redisClient.duplicate();
 
 
