@@ -26,11 +26,23 @@ pgClient
 
 // Redis Client Setup
 const redis = require('redis');
+const redisPassword = "redis" ;
+
 const redisClient = redis.createClient({
-  host: keys.redisHost,
-  port: keys.redisPort,
+  host: keys.redishost,
+  port: keys.redisport,
+  no_ready_check: true,
+  auth_pass: redisPassword,
   retry_strategy: () => 1000
 });
+
+redisClient.on('connect', () => {   
+          global.console.log("connected");
+});                               
+
+redisClient.on('error', err => {       
+          global.console.log(err.message)
+});                       
 const redisPublisher = redisClient.duplicate();
 
 // Express route handlers
