@@ -3,7 +3,7 @@ WORKDIR "/app"
 COPY ./package.json ./
 RUN npm install
 COPY . .
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]
 # FROM node:5.11.0-slim
 
 # WORKDIR /app
